@@ -2,170 +2,201 @@ package KI.Kulyk.Lab2;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.io.PrintWriter;
 
+/**
+ * Клас Telephone описує телефон.
+ * Він складається з кількох частин: дисплея, батареї та процесора.
+ */
 public class Telephone {
-    private Screen screen;
+
+    private Display display;
     private Battery battery;
     private Processor processor;
-    private FileWriter logFile;
+    private PrintWriter logWriter;
 
-    // Constructor without parameters
-    public Telephone() throws IOException {
-        this.screen = new Screen(6.0, "1080p");
-        this.battery = new Battery(3000);
-        this.processor = new Processor("Qualcomm", 2.0);
-        openLogFile();
+    /**
+     * Конструктор за замовчуванням.
+     */
+    public Telephone() {
+        this.display = new Display("OLED", 6.1);
+        this.battery = new Battery(4000);
+        this.processor = new Processor("Snapdragon", 8);
+        initializeLogger();
         log("Telephone created with default values.");
     }
 
-    // Constructor with parameters
-    public Telephone(Screen screen, Battery battery, Processor processor) throws IOException {
-        this.screen = screen;
+    /**
+     * Конструктор з параметрами.
+     * @param display дисплей телефону
+     * @param battery батарея телефону
+     * @param processor процесор телефону
+     */
+    public Telephone(Display display, Battery battery, Processor processor) {
+        this.display = display;
         this.battery = battery;
         this.processor = processor;
-        openLogFile();
+        initializeLogger();
         log("Telephone created with custom values.");
     }
 
-    // Method to open the log file
-    private void openLogFile() throws IOException {
-        logFile = new FileWriter("telephone_log.txt", true);
-        log("Log file opened.");
+    /**
+     * Ініціалізація логера.
+     */
+    private void initializeLogger() {
+        try {
+            logWriter = new PrintWriter(new FileWriter("telephone_log.txt", true));
+        } catch (IOException e) {
+            System.out.println("Unable to open log file.");
+        }
     }
 
-    // Method to log activities
-    private void log(String message) throws IOException {
-        logFile.write(LocalDateTime.now() + ": " + message + "\n");
+    /**
+     * Метод для логування повідомлень.
+     * @param message повідомлення для логування
+     */
+    private void log(String message) {
+        if (logWriter != null) {
+            logWriter.println(message);
+        }
     }
 
-    // Getter for screen
-    public Screen getScreen() {
-        return screen;
+    /**
+     * Метод для завершення роботи з файлом логів.
+     */
+    public void closeLog() {
+        log("Closing log file.");
+        if (logWriter != null) {
+            logWriter.close();
+        }
     }
 
-    // Setter for screen
-    public void setScreen(Screen screen) throws IOException {
-        this.screen = screen;
-        log("Screen updated.");
+    /**
+     * Отримати тип дисплея.
+     * @return тип дисплея
+     */
+    public String getDisplayType() {
+        log("Getting display type.");
+        return display.getType();
     }
 
-    // Getter for battery
-    public Battery getBattery() {
-        return battery;
+    /**
+     * Задати тип дисплея.
+     * @param type тип дисплея
+     */
+    public void setDisplayType(String type) {
+        log("Setting display type to " + type);
+        display.setType(type);
     }
 
-    // Setter for battery
-    public void setBattery(Battery battery) throws IOException {
-        this.battery = battery;
-        log("Battery updated.");
-    }
-
-    // Getter for processor
-    public Processor getProcessor() {
-        return processor;
-    }
-
-    // Setter for processor
-    public void setProcessor(Processor processor) throws IOException {
-        this.processor = processor;
-        log("Processor updated.");
-    }
-
-    // Method to simulate turning on the phone
-    public void turnOn() throws IOException {
-        log("Telephone turned on.");
-    }
-
-    // Method to simulate turning off the phone
-    public void turnOff() throws IOException {
-        log("Telephone turned off.");
-        closeLogFile();
-    }
-
-    // Method to close the log file
-    private void closeLogFile() throws IOException {
-        logFile.write(LocalDateTime.now() + ": Log file closed.\n");
-        logFile.close();
-    }
-
-    // Method to simulate a call
-    public void makeCall(String number) throws IOException {
-        log("Calling " + number + "...");
-    }
-
-    // Method to check battery status
-    public int checkBattery() {
+    /**
+     * Отримати ємність батареї.
+     * @return ємність батареї
+     */
+    public int getBatteryCapacity() {
+        log("Getting battery capacity.");
         return battery.getCapacity();
     }
 
+    /**
+     * Задати ємність батареї.
+     * @param capacity ємність батареї
+     */
+    public void setBatteryCapacity(int capacity) {
+        log("Setting battery capacity to " + capacity);
+        battery.setCapacity(capacity);
+    }
+
+    /**
+     * Отримати тип процесора.
+     * @return тип процесора
+     */
+    public String getProcessorType() {
+        log("Getting processor type.");
+        return processor.getModel();
+    }
+
+    /**
+     * Задати тип процесора.
+     * @param model тип процесора
+     */
+    public void setProcessorType(String model) {
+        log("Setting processor type to " + model);
+        processor.setModel(model);
+    }
+
+    // Внутрішні класи для частин телефону
+
+    /**
+     * Клас для опису дисплея.
+     */
+    class Display {
+        private String type;
+        private double size;
+
+        public Display(String type, double size) {
+            this.type = type;
+            this.size = size;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public double getSize() {
+            return size;
+        }
+    }
+
+    /**
+     * Клас для опису батареї.
+     */
+    class Battery {
+        private int capacity;
+
+        public Battery(int capacity) {
+            this.capacity = capacity;
+        }
+
+        public int getCapacity() {
+            return capacity;
+        }
+
+        public void setCapacity(int capacity) {
+            this.capacity = capacity;
+        }
+    }
+
+    /**
+     * Клас для опису процесора.
+     */
+    class Processor {
+        private String model;
+        private int cores;
+
+        public Processor(String model, int cores) {
+            this.model = model;
+            this.cores = cores;
+        }
+
+        public String getModel() {
+            return model;
+        }
+
+        public void setModel(String model) {
+            this.model = model;
+        }
+
+        public int getCores() {
+            return cores;
+        }
+
+        public void setCores(int cores) {
+            this.cores = cores;
+        }
+    }
 }
-
-class Screen {
-    private double size;
-    private String resolution;
-
-    public Screen(double size, String resolution) {
-        this.size = size;
-        this.resolution = resolution;
-    }
-
-    public double getSize() {
-        return size;
-    }
-
-    public void setSize(double size) {
-        this.size = size;
-    }
-
-    public String getResolution() {
-        return resolution;
-    }
-
-    public void setResolution(String resolution) {
-        this.resolution = resolution;
-    }
-}
-
-class Battery {
-    private int capacity;
-
-    public Battery(int capacity) {
-        this.capacity = capacity;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-}
-
-class Processor {
-    private String brand;
-    private double speed;
-
-    public Processor(String brand, double speed) {
-        this.brand = brand;
-        this.speed = speed;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public double getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(double speed) {
-        this.speed = speed;
-    }
-}
-
