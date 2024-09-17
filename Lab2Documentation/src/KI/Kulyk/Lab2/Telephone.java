@@ -3,7 +3,6 @@ package KI.Kulyk.Lab2;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDateTime;
 
 /**
  * Клас Telephone описує телефон.
@@ -58,7 +57,7 @@ public class Telephone {
      */
     private void log(String message) {
         if (logWriter != null) {
-            logWriter.println(LocalDateTime.now() + " - " + message);
+            logWriter.println(message);
         }
     }
 

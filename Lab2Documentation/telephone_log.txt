@@ -1,0 +1,11 @@
+
+Telephone created with default values.
+Setting display type to LCD
+Setting battery capacity to 4500
+Setting processor type to Exynos
+Getting display type.
+Getting battery capacity.
+Getting processor type.
+Closing log file.
+Telephone created with custom values.
+Closing log file.
