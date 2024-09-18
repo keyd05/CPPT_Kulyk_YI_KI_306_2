@@ -29,8 +29,9 @@ public class Telephone {
 
     /**
      * Конструктор з параметрами.
-     * @param display дисплей телефону
-     * @param battery батарея телефону
+     *
+     * @param display   дисплей телефону
+     * @param battery   батарея телефону
      * @param processor процесор телефону
      */
     public Telephone(Display display, Battery battery, Processor processor) {
@@ -54,6 +55,7 @@ public class Telephone {
 
     /**
      * Метод для логування повідомлень.
+     *
      * @param message повідомлення для логування
      */
     private void log(String message) {
@@ -70,6 +72,22 @@ public class Telephone {
         if (logWriter != null) {
             logWriter.close();
         }
+    }
+
+    /**
+     * Зробити дзвінок.
+     */
+    public void makeCall(String number) {
+        battery.setCapacity(battery.getCapacity() - 30);
+        log("Calling to " + number + '.');
+    }
+
+    /**
+     * Завершити дзвінок.
+     */
+    public void endCall() {
+
+        log("Call is ended.");
     }
 
     /**
@@ -124,80 +142,5 @@ public class Telephone {
     public void setProcessorType(String model) {
         log("Setting processor type to " + model);
         processor.setModel(model);
-    }
-
-    // Внутрішні класи для частин телефону
-
-    /**
-     * Клас для опису дисплея.
-     */
-    class Display {
-        private String type;
-        private double size;
-
-        public Display(String type, double size) {
-            this.type = type;
-            this.size = size;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public double getSize() {
-            return size;
-        }
-    }
-
-    /**
-     * Клас для опису батареї.
-     */
-    class Battery {
-        private int capacity;
-
-        public Battery(int capacity) {
-            this.capacity = capacity;
-        }
-
-        public int getCapacity() {
-            return capacity;
-        }
-
-        public void setCapacity(int capacity) {
-            this.capacity = capacity;
-        }
-    }
-
-    /**
-     * Клас для опису процесора.
-     */
-    class Processor {
-        private String model;
-        private int cores;
-
-        public Processor(String model, int cores) {
-            this.model = model;
-            this.cores = cores;
-        }
-
-        public String getModel() {
-            return model;
-        }
-
-        public void setModel(String model) {
-            this.model = model;
-        }
-
-        public int getCores() {
-            return cores;
-        }
-
-        public void setCores(int cores) {
-            this.cores = cores;
-        }
     }
 }

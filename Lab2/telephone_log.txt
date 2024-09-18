@@ -1,10 +1,35 @@
-2024-09-18T00:45:21.841358500 - Telephone created with default values.
-2024-09-18T00:45:21.849365600 - Setting display type to LCD
-2024-09-18T00:45:21.851367700 - Setting battery capacity to 4500
-2024-09-18T00:45:21.851367700 - Setting processor type to Exynos
-2024-09-18T00:45:21.851367700 - Getting display type.
-2024-09-18T00:45:21.851367700 - Getting battery capacity.
-2024-09-18T00:45:21.851367700 - Getting processor type.
-2024-09-18T00:45:21.852368500 - Closing log file.
-2024-09-18T00:45:21.852368500 - Telephone created with custom values.
-2024-09-18T00:45:21.852368500 - Closing log file.
+2024-09-18T14:13:42.188739800 - Telephone created with default values.
+2024-09-18T14:13:42.194745600 - Setting display type to LCD
+2024-09-18T14:13:42.197748200 - Setting battery capacity to 4500
+2024-09-18T14:13:42.197748200 - Setting processor type to Exynos
+2024-09-18T14:13:42.199750300 - Calling to +380631234567.
+2024-09-18T14:13:42.199750300 - Getting display type.
+2024-09-18T14:13:42.200750800 - Getting battery capacity.
+2024-09-18T14:13:42.200750800 - Getting processor type.
+2024-09-18T14:13:42.200750800 - Closing log file.
+2024-09-18T14:13:42.200750800 - Telephone created with custom values.
+2024-09-18T14:13:42.200750800 - Closing log file.
+2024-09-18T14:19:38.610228300 - Telephone created with default values.
+2024-09-18T14:19:38.616233700 - Setting display type to LCD
+2024-09-18T14:19:38.619237 - Setting battery capacity to 4500
+2024-09-18T14:19:38.619237 - Setting processor type to Exynos
+2024-09-18T14:19:38.621238900 - Calling to +380631234567.
+2024-09-18T14:19:38.621238900 - Call is ended.
+2024-09-18T14:19:38.621238900 - Getting display type.
+2024-09-18T14:19:38.621238900 - Getting battery capacity.
+2024-09-18T14:19:38.621238900 - Getting processor type.
+2024-09-18T14:19:38.621238900 - Closing log file.
+2024-09-18T14:19:38.622239500 - Telephone created with custom values.
+2024-09-18T14:19:38.622239500 - Closing log file.
+2024-09-18T14:24:33.938991100 - Telephone created with default values.
+2024-09-18T14:24:33.945996900 - Setting display type to LCD
+2024-09-18T14:24:33.948999600 - Setting battery capacity to 4500
+2024-09-18T14:24:33.948999600 - Setting processor type to Exynos
+2024-09-18T14:24:33.951001500 - Calling to +380631234567.
+2024-09-18T14:24:33.951001500 - Call is ended.
+2024-09-18T14:24:33.951001500 - Getting display type.
+2024-09-18T14:24:33.952002500 - Getting battery capacity.
+2024-09-18T14:24:33.952002500 - Getting processor type.
+2024-09-18T14:24:33.952002500 - Closing log file.
+2024-09-18T14:24:33.952002500 - Telephone created with custom values.
+2024-09-18T14:24:33.952002500 - Closing log file.

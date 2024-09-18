@@ -12,6 +12,8 @@ public class Driver {
         phone1.setDisplayType("LCD");
         phone1.setBatteryCapacity(4500);
         phone1.setProcessorType("Exynos");
+        phone1.makeCall("+380631234567");
+        phone1.endCall();
 
         // Отримуємо значення
         System.out.println("Display type: " + phone1.getDisplayType());
@@ -22,9 +24,9 @@ public class Driver {
         phone1.closeLog();
 
         // Створюємо телефон з кастомними параметрами
-        Telephone.Display display = phone1.new Display("AMOLED", 6.5);
-        Telephone.Battery battery = phone1.new Battery(5000);
-        Telephone.Processor processor = phone1.new Processor("Apple A15", 6);
+        Display display = new Display("AMOLED", 6.5);
+        Battery battery = new Battery(5000);
+        Processor processor = new Processor("Apple A15", 6);
 
         Telephone phone2 = new Telephone(display, battery, processor);
         phone2.closeLog();
