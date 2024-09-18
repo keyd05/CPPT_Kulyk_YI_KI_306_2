@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2bd3754-ab76-41b5-a4ed-9cc9fd3a8cf2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Lab1Kulyk306.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1Kulyk306.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/second.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/Lab1Kulyk306.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/Lab1Kulyk306.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/legal/COPYRIGHT" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/legal/COPYRIGHT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/legal/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/legal/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/legal/jquery.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/legal/jquery.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/legal/jqueryUI.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/legal/jqueryUI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/resource-files/jquery-ui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/resource-files/jquery-ui.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/script-files/jquery-3.6.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/script-files/jquery-3.6.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/script-files/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/script-files/jquery-ui.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab1Documentation/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab1Documentation/search.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,46 +40,46 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "keyd05"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;keyd05&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:keyd05/Java_KZP.git",
-    "accountId": "77b643d9-2e45-4dfa-a163-fdf467debedf"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:keyd05/Java_KZP.git&quot;,
+    &quot;accountId&quot;: &quot;77b643d9-2e45-4dfa-a163-fdf467debedf&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2mEvs3oPMITVox8EQemYjsBEGDW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Lab1Kulyk306.executor": "Run",
-    "Application.second.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Lab1",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Lab1Kulyk306.executor&quot;: &quot;Run&quot;,
+    &quot;Application.second.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Lab1&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -79,6 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1726654754047</updated>
       <workItem from="1726654755635" duration="2258000" />
+      <workItem from="1726659236554" duration="209000" />
     </task>
     <servers />
   </component>
