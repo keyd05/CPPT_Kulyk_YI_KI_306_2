@@ -1,26 +1,12 @@
 import java.io.*;
 import java.util.*;
 
-/**
- * Клас Lab1Kulyk306 містить метод main, який дозволяє користувачеві
- * ввести розмір квадрата та символ для його заповнення, після чого
- * квадрат буде виведений на екран та збережений у файл.
- */
-public class Lab1Kulyk306
+public class second
 {
-    /**
-     * Запитує в користувача розмір квадрата та символ для його заповнення,
-     * малює квадрат та записує його у файл.
-     *
-     * @param args Аргументи командного рядка (не використовується).
-     * @throws FileNotFoundException якщо файл для запису не вдається створити.
-     */
     public static void main(String[] args) throws FileNotFoundException
     {
-        // Створюємо сканер для зчитування даних з консолі
         Scanner scanner = new Scanner(System.in);
 
-        // Запитуємо у користувача розмір квадрата
         System.out.print("Введіть розмір квадрата: ");
         int nRows = scanner.nextInt();
 
@@ -33,7 +19,6 @@ public class Lab1Kulyk306
         // Запитуємо у користувача символ для заповнення квадрата
         System.out.print("Введіть символ для заповнення: ");
         String input = scanner.next();
-        
         if(input.length() == 0) {
             System.out.print("Некорректний символ. Відсутній символ.");
             return;
@@ -55,32 +40,35 @@ public class Lab1Kulyk306
             }
         }
 
-        // Створюємо об'єкт для запису даних у файл
         PrintWriter fout = new PrintWriter("MyFile.txt");
 
-        // Заповнюємо квадрат символами
         for (int i = 0; i < nRows; ++i) {
-            int arrIndx = 0;
-            for (int j = 0; j < nRows; ++j) {
-                // Заповнюємо квадрат за допомогою символу або пробілу
-                if (j % (nRows/3) < (nRows/6)) {
+            int ArrIndx = 0;
+            int rem = nRows % 6;
+            for (int j = 0; j < rem; j++)
+            {
+                arr[i][j] = ' ';
+                fout.print(arr[i][j]);
+                System.out.print(arr[i][j]);
+            }
+
+            for (int j = rem; j < nRows; ++j) {
+                if ((j-rem) / (nRows/6) % 2 == 0) {
                     fout.print(' ');
                     System.out.print(' ');
                 }
                 else {
-                    arr[i][arrIndx] = symbol;
-                    fout.print(arr[i][arrIndx]);
-                    System.out.print(arr[i][arrIndx]);
-
-                    arrIndx++;
+                    arr[i][ArrIndx] = symbol;
+                    fout.print(arr[i][ArrIndx]);
+                    System.out.print(arr[i][ArrIndx]);
+                    ArrIndx++;
                 }
             }
-            // Додаємо новий рядок у файл і на екран
+
             fout.print("\n");
             System.out.println();
         }
 
-        // Закриваємо файл після запису
         fout.flush();
         fout.close();
     }
