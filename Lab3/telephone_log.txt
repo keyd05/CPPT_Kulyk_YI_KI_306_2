@@ -1,0 +1,11 @@
+2024-09-19T04:19:57.915044900 - Telephone created with default values.
+2024-09-19T04:19:57.921050300 - MobilePhone created with default phone number.
+2024-09-19T04:19:57.921050300 - Setting phone number to: +380123456789
+2024-09-19T04:19:57.921050300 - Making call to: +380987654321
+2024-09-19T04:19:57.922051300 - Sending SMS to: +380987654321 with message: Hello, this is a test SMS!
+2024-09-19T04:19:57.922051300 - Browsing internet at: www.example.com
+2024-09-19T04:19:57.922051300 - Closing log file.
+2024-09-19T04:19:57.922051300 - Telephone created with custom values.
+2024-09-19T04:19:57.922051300 - MobilePhone created with custom phone number: +380987654321
+2024-09-19T04:19:57.922051300 - Making call to: +380123456789
+2024-09-19T04:19:57.922051300 - Closing log file.

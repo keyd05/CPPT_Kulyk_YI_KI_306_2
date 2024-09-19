@@ -62,6 +62,7 @@ public class MobilePhone extends Telephone implements MobileFunctions {
      */
     @Override
     public void makeCall(String number) {
+        setBatteryCapacity(getBatteryCapacity() - 30);
         log("Making call to: " + number);
         System.out.println("Calling " + number + " from " + phoneNumber);
     }
@@ -73,6 +74,7 @@ public class MobilePhone extends Telephone implements MobileFunctions {
      */
     @Override
     public void sendSMS(String number, String message) {
+        setBatteryCapacity(getBatteryCapacity() - 10);
         log("Sending SMS to: " + number + " with message: " + message);
         System.out.println("Sending SMS to " + number + ": " + message);
     }
@@ -83,6 +85,7 @@ public class MobilePhone extends Telephone implements MobileFunctions {
      */
     @Override
     public void browseInternet(String url) {
+        setBatteryCapacity(getBatteryCapacity() - 50);
         log("Browsing internet at: " + url);
         System.out.println("Browsing " + url);
     }

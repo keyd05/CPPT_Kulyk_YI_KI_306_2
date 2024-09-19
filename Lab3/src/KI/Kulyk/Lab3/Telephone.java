@@ -3,17 +3,18 @@ package KI.Kulyk.Lab3;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
 
 /**
- * Абстрактний клас Telephone описує основні частини телефону.
- * Він містить дисплей, батарею та процесор.
+ * Клас Telephone описує телефон.
+ * Він складається з кількох частин: дисплея, батареї та процесора.
  */
 public abstract class Telephone {
 
-    protected Display display;
-    protected Battery battery;
-    protected Processor processor;
-    protected PrintWriter logWriter;
+    private Display display;
+    private Battery battery;
+    private Processor processor;
+    private PrintWriter logWriter;
 
     /**
      * Конструктор за замовчуванням.
@@ -23,13 +24,14 @@ public abstract class Telephone {
         this.battery = new Battery(4000);
         this.processor = new Processor("Snapdragon", 8);
         initializeLogger();
-        log("Abstract Telephone created with default values.");
+        log("Telephone created with default values.");
     }
 
     /**
      * Конструктор з параметрами.
-     * @param display дисплей телефону
-     * @param battery батарея телефону
+     *
+     * @param display   дисплей телефону
+     * @param battery   батарея телефону
      * @param processor процесор телефону
      */
     public Telephone(Display display, Battery battery, Processor processor) {
@@ -37,7 +39,7 @@ public abstract class Telephone {
         this.battery = battery;
         this.processor = processor;
         initializeLogger();
-        log("Abstract Telephone created with custom values.");
+        log("Telephone created with custom values.");
     }
 
     /**
@@ -53,90 +55,91 @@ public abstract class Telephone {
 
     /**
      * Метод для логування повідомлень.
+     *
      * @param message повідомлення для логування
      */
     protected void log(String message) {
         if (logWriter != null) {
-            logWriter.println(message);
+            logWriter.println(LocalDateTime.now() + " - " + message);
         }
     }
 
     /**
      * Метод для завершення роботи з файлом логів.
      */
-    public void closeLog() {
+    protected void closeLog() {
         log("Closing log file.");
         if (logWriter != null) {
             logWriter.close();
         }
     }
 
-    // Абстрактний метод для конкретних підкласів
-    public abstract void makeCall(String number);
-
-    // Внутрішні класи для частин телефону
-
-    class Display {
-        private String type;
-        private double size;
-
-        public Display(String type, double size) {
-            this.type = type;
-            this.size = size;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public double getSize() {
-            return size;
-        }
+    /**
+     * Зробити дзвінок.
+     */
+    public void makeCall(String number) {
+        log("Calling to " + number + '.');
     }
 
-    class Battery {
-        private int capacity;
+    /**
+     * Завершити дзвінок.
+     */
+    public void endCall() {
 
-        public Battery(int capacity) {
-            this.capacity = capacity;
-        }
-
-        public int getCapacity() {
-            return capacity;
-        }
-
-        public void setCapacity(int capacity) {
-            this.capacity = capacity;
-        }
+        log("Call is ended.");
     }
 
-    class Processor {
-        private String model;
-        private int cores;
+    /**
+     * Отримати тип дисплея.
+     * @return тип дисплея
+     */
+    public String getDisplayType() {
+        log("Getting display type.");
+        return display.getType();
+    }
 
-        public Processor(String model, int cores) {
-            this.model = model;
-            this.cores = cores;
-        }
+    /**
+     * Задати тип дисплея.
+     * @param type тип дисплея
+     */
+    public void setDisplayType(String type) {
+        log("Setting display type to " + type);
+        display.setType(type);
+    }
 
-        public String getModel() {
-            return model;
-        }
+    /**
+     * Отримати ємність батареї.
+     * @return ємність батареї
+     */
+    public int getBatteryCapacity() {
+        log("Getting battery capacity.");
+        return battery.getCapacity();
+    }
 
-        public void setModel(String model) {
-            this.model = model;
-        }
+    /**
+     * Задати ємність батареї.
+     * @param capacity ємність батареї
+     */
+    public void setBatteryCapacity(int capacity) {
+        log("Setting battery capacity to " + capacity);
+        battery.setCapacity(capacity);
+    }
 
-        public int getCores() {
-            return cores;
-        }
+    /**
+     * Отримати тип процесора.
+     * @return тип процесора
+     */
+    public String getProcessorType() {
+        log("Getting processor type.");
+        return processor.getModel();
+    }
 
-        public void setCores(int cores) {
-            this.cores = cores;
-        }
+    /**
+     * Задати тип процесора.
+     * @param model тип процесора
+     */
+    public void setProcessorType(String model) {
+        log("Setting processor type to " + model);
+        processor.setModel(model);
     }
 }

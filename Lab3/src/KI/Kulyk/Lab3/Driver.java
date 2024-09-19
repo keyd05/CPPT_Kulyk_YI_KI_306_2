@@ -18,9 +18,9 @@ public class Driver {
         phone.closeLog();
 
         // Створення мобільного телефону з кастомними параметрами
-        MobilePhone.Display display = phone.new Display("AMOLED", 6.5);
-        MobilePhone.Battery battery = phone.new Battery(5000);
-        MobilePhone.Processor processor = phone.new Processor("Exynos", 8);
+        Display display = new Display("AMOLED", 6.5);
+        Battery battery = new Battery(5000);
+        Processor processor = new Processor("Exynos", 8);
 
         MobilePhone customPhone = new MobilePhone(display, battery, processor, "+380987654321");
         customPhone.makeCall("+380123456789");
