@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
  * Клас Telephone описує телефон.
  * Він складається з кількох частин: дисплея, батареї та процесора.
  */
-public abstract class Telephone {
+public class Telephone {
 
     private Display display;
     private Battery battery;
@@ -58,7 +58,7 @@ public abstract class Telephone {
      *
      * @param message повідомлення для логування
      */
-    protected void log(String message) {
+    private void log(String message) {
         if (logWriter != null) {
             logWriter.println(LocalDateTime.now() + " - " + message);
         }
@@ -67,7 +67,7 @@ public abstract class Telephone {
     /**
      * Метод для завершення роботи з файлом логів.
      */
-    protected void closeLog() {
+    public void closeLog() {
         log("Closing log file.");
         if (logWriter != null) {
             logWriter.close();
@@ -78,6 +78,7 @@ public abstract class Telephone {
      * Зробити дзвінок.
      */
     public void makeCall(String number) {
+        battery.setCapacity(battery.getCapacity() - 30);
         log("Calling to " + number + '.');
     }
 

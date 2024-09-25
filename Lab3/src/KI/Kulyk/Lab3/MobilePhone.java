@@ -1,92 +1,108 @@
 package KI.Kulyk.Lab3;
 
 /**
- * Інтерфейс з додатковими функціями мобільного телефону.
+ * Інтерфейс для функціональності мобільного пристрою.
  */
-interface MobileFunctions {
+interface MobileDevice {
     void sendSMS(String number, String message);
-    void browseInternet(String url);
+    void takePhoto();
 }
 
 /**
- * Клас MobilePhone розширює абстрактний клас Telephone
- * і реалізує інтерфейс MobileFunctions.
+ * Клас MobilePhone, який розширює абстрактний клас Telephone та реалізує інтерфейс MobileDevice.
  */
-public class MobilePhone extends Telephone implements MobileFunctions {
-
-    private String phoneNumber;
+public class MobilePhone extends Telephone implements MobileDevice {
+    private String operatingSystem;
+    private int cameraResolution;
 
     /**
      * Конструктор за замовчуванням.
      */
     public MobilePhone() {
         super();
-        this.phoneNumber = "Unknown";
-        log("MobilePhone created with default phone number.");
+        this.operatingSystem = "Android";
+        this.cameraResolution = 12;
+        log("MobilePhone created with default values.");
     }
 
     /**
      * Конструктор з параметрами.
+     *
      * @param display дисплей телефону
      * @param battery батарея телефону
      * @param processor процесор телефону
-     * @param phoneNumber номер телефону
+     * @param operatingSystem операційна система
+     * @param cameraResolution роздільна здатність камери в мегапікселях
      */
-    public MobilePhone(Display display, Battery battery, Processor processor, String phoneNumber) {
-        super(display, battery, processor);  // Спочатку викликається конструктор суперкласу
-        this.phoneNumber = phoneNumber;
-        log("MobilePhone created with custom phone number: " + phoneNumber);
+    public MobilePhone(Display display, Battery battery, Processor processor,
+                       String operatingSystem, int cameraResolution) {
+        super(display, battery, processor);
+        this.operatingSystem = operatingSystem;
+        this.cameraResolution = cameraResolution;
+        log("MobilePhone created with custom values.");
     }
 
     /**
-     * Встановити номер телефону.
-     * @param phoneNumber номер телефону
-     */
-    public void setPhoneNumber(String phoneNumber) {
-        log("Setting phone number to: " + phoneNumber);
-        this.phoneNumber = phoneNumber;
-    }
-
-    /**
-     * Отримати номер телефону.
-     * @return номер телефону
-     */
-    public String getPhoneNumber() {
-        log("Getting phone number.");
-        return phoneNumber;
-    }
-
-    /**
-     * Реалізація абстрактного методу для здійснення дзвінка.
-     * @param number номер телефону, на який здійснюється дзвінок
-     */
-    @Override
-    public void makeCall(String number) {
-        setBatteryCapacity(getBatteryCapacity() - 30);
-        log("Making call to: " + number);
-        System.out.println("Calling " + number + " from " + phoneNumber);
-    }
-
-    /**
-     * Відправити SMS.
+     * Реалізація методу для відправки SMS.
+     *
      * @param number номер отримувача
      * @param message текст повідомлення
      */
     @Override
     public void sendSMS(String number, String message) {
-        setBatteryCapacity(getBatteryCapacity() - 10);
-        log("Sending SMS to: " + number + " with message: " + message);
-        System.out.println("Sending SMS to " + number + ": " + message);
+        log("Sending SMS to " + number + ": " + message);
     }
 
     /**
-     * Перегляд веб-сторінки.
-     * @param url URL сторінки
+     * Реалізація методу для фотографування.
      */
     @Override
-    public void browseInternet(String url) {
-        setBatteryCapacity(getBatteryCapacity() - 50);
-        log("Browsing internet at: " + url);
-        System.out.println("Browsing " + url);
+    public void takePhoto() {
+        log("Taking photo with " + cameraResolution + "MP camera.");
+    }
+
+    /**
+     * Отримати операційну систему телефону.
+     * @return операційна система
+     */
+    public String getOperatingSystem() {
+        log("Getting operating system.");
+        return operatingSystem;
+    }
+
+    /**
+     * Задати операційну систему телефону.
+     * @param operatingSystem операційна система
+     */
+    public void setOperatingSystem(String operatingSystem) {
+        log("Setting operating system to " + operatingSystem);
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * Отримати роздільну здатність камери.
+     * @return роздільна здатність камери в мегапікселях
+     */
+    public int getCameraResolution() {
+        log("Getting camera resolution.");
+        return cameraResolution;
+    }
+
+    /**
+     * Задати роздільну здатність камери.
+     * @param cameraResolution роздільна здатність камери в мегапікселях
+     */
+    public void setCameraResolution(int cameraResolution) {
+        log("Setting camera resolution to " + cameraResolution + "MP");
+        this.cameraResolution = cameraResolution;
+    }
+
+    /**
+     * Перевизначений метод для завершення дзвінка.
+     */
+    @Override
+    public void endCall() {
+        super.endCall();
+        log("MobilePhone: Call ended and resources freed.");
     }
 }
