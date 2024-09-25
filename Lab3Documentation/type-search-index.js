@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"KI.Kulyk.Lab3","l":"Battery"},{"p":"KI.Kulyk.Lab3","l":"Display"},{"p":"KI.Kulyk.Lab3","l":"Driver"},{"p":"KI.Kulyk.Lab3","l":"MobilePhone"},{"p":"KI.Kulyk.Lab3","l":"Processor"},{"p":"KI.Kulyk.Lab3","l":"Telephone"}];updateSearchResults();

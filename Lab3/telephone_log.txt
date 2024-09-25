@@ -1,22 +1,14 @@
-2024-09-25T04:21:39.490180300 - Telephone created with custom values.
-2024-09-25T04:21:39.497186800 - Getting display type.
-2024-09-25T04:21:39.497186800 - Getting battery capacity.
-2024-09-25T04:21:39.500189500 - Getting processor type.
-2024-09-25T04:21:39.501190300 - Calling to 987-654-3210 from 123-456-7890.
-2024-09-25T04:21:39.501190300 - Sending SMS to 987-654-3210: Hello, how are you?
-2024-09-25T04:21:39.501190300 - Received SMS: I'm good, thanks!
-2024-09-25T04:21:39.501190300 - Closing log file.
-2024-09-25T04:25:03.959466100 - Telephone created with custom values.
-2024-09-25T04:25:03.965471100 - Getting display type.
-2024-09-25T04:25:03.965471100 - Getting battery capacity.
-2024-09-25T04:25:03.967472900 - Getting processor type.
-2024-09-25T04:25:03.968473700 - Getting battery capacity.
-2024-09-25T04:25:03.968473700 - Setting battery capacity to 4470
-2024-09-25T04:25:03.968473700 - Calling to 987-654-3210 from 123-456-7890.
-2024-09-25T04:25:03.968473700 - Getting battery capacity.
-2024-09-25T04:25:03.968473700 - Setting battery capacity to 4455
-2024-09-25T04:25:03.968473700 - Sending SMS to 987-654-3210: Hello, how are you?
-2024-09-25T04:25:03.968473700 - Getting battery capacity.
-2024-09-25T04:25:03.968473700 - Setting battery capacity to 4450
-2024-09-25T04:25:03.968473700 - Received SMS: I'm good, thanks!
-2024-09-25T04:25:03.968473700 - Closing log file.
+2024-09-25T04:41:52.774509200 - Telephone created with custom values.
+2024-09-25T04:41:52.781514900 - Getting display type.
+2024-09-25T04:41:52.781514900 - Getting battery capacity.
+2024-09-25T04:41:52.783516700 - Getting processor type.
+2024-09-25T04:41:52.783516700 - Getting battery capacity.
+2024-09-25T04:41:52.783516700 - Setting battery capacity to 4470
+2024-09-25T04:41:52.784517900 - Calling to +38063456154 from +380634567890.
+2024-09-25T04:41:52.784517900 - Getting battery capacity.
+2024-09-25T04:41:52.784517900 - Setting battery capacity to 4455
+2024-09-25T04:41:52.784517900 - Sending SMS to +38063456154: Hello, how are you?
+2024-09-25T04:41:52.784517900 - Getting battery capacity.
+2024-09-25T04:41:52.784517900 - Setting battery capacity to 4450
+2024-09-25T04:41:52.784517900 - Received SMS: I'm good, thanks!
+2024-09-25T04:41:52.784517900 - Closing log file.
