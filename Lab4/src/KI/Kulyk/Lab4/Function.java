@@ -1,6 +1,7 @@
 package KI.Kulyk.Lab4;
 
 import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.io.IOException;
 
 /**
@@ -16,32 +17,23 @@ public class Function {
      * @throws ArithmeticException якщо вираз не може бути обчислений (наприклад, через ділення на нуль).
      */
     public static double Calculate(double x) throws ArithmeticException {
-        if (x == 0 || x == Math.PI/16 || x == 3*Math.PI/16) {
-            throw new ArithmeticException("Ділення на нуль: ctg(8x) не може дорівнювати нулю.");
-        }
-
-        double result = Math.sin(x) * Math.tan(8*x);
-
         try {
-            writeResultToFile(x, result);
+            PrintWriter file = new PrintWriter(new FileWriter("MyFile.txt", true));
+
+            if (Math.cos(8 * x) == 0) {
+                throw new ArithmeticException("y не визначений при x=" + x);
+            }
+
+            double result = (Math.sin(x) * Math.sin(8 * x)) / Math.cos(8 * x);
+            file.println("Результат обчислення y = sin(x) / ctg(8x) при х = " + x + ": " + result);
             System.out.println("Результат записано у файл!");
         }
-        catch (IOException e){
-            e.printStackTrace();
+        catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
         }
-
-        return result;
-    }
-
-    /**
-     * Записує результат обчислення у файл.
-     *
-     * @param result Результат обчислення.
-     * @throws IOException якщо виникає помилка запису у файл.
-     */
-    public static void writeResultToFile(double inputX, double result) throws IOException {
-        try (FileWriter writer = new FileWriter("MyFile.txt")) {
-            writer.append("Результат обчислення y = sin(x) / ctg(8x) при х = " + inputX + ": " + result);
+        catch (IOException e) {
+            System.out.println("Помилка відкриття файлу!");
         }
     }
+
 }
