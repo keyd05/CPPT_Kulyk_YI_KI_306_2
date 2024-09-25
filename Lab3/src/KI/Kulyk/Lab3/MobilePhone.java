@@ -1,108 +1,48 @@
 package KI.Kulyk.Lab3;
 
 /**
- * Інтерфейс для функціональності мобільного пристрою.
+ * Інтерфейс з функціоналом для мобільного телефону.
  */
 interface MobileDevice {
     void sendSMS(String number, String message);
-    void takePhoto();
+    void receiveSMS(String message);
 }
 
 /**
- * Клас MobilePhone, який розширює абстрактний клас Telephone та реалізує інтерфейс MobileDevice.
+ * Клас MobilePhone розширює Telephone і реалізує інтерфейс MobileDevice.
  */
 public class MobilePhone extends Telephone implements MobileDevice {
-    private String operatingSystem;
-    private int cameraResolution;
 
-    /**
-     * Конструктор за замовчуванням.
-     */
-    public MobilePhone() {
-        super();
-        this.operatingSystem = "Android";
-        this.cameraResolution = 12;
-        log("MobilePhone created with default values.");
-    }
+    private String phoneNumber;
 
     /**
      * Конструктор з параметрами.
      *
-     * @param display дисплей телефону
-     * @param battery батарея телефону
+     * @param display   дисплей телефону
+     * @param battery   батарея телефону
      * @param processor процесор телефону
-     * @param operatingSystem операційна система
-     * @param cameraResolution роздільна здатність камери в мегапікселях
+     * @param phoneNumber номер телефону
      */
-    public MobilePhone(Display display, Battery battery, Processor processor,
-                       String operatingSystem, int cameraResolution) {
+    public MobilePhone(Display display, Battery battery, Processor processor, String phoneNumber) {
         super(display, battery, processor);
-        this.operatingSystem = operatingSystem;
-        this.cameraResolution = cameraResolution;
-        log("MobilePhone created with custom values.");
+        this.phoneNumber = phoneNumber;
     }
 
-    /**
-     * Реалізація методу для відправки SMS.
-     *
-     * @param number номер отримувача
-     * @param message текст повідомлення
-     */
+    @Override
+    public void makeCall(String number) {
+        setBatteryCapacity(getBatteryCapacity() - 30);
+        log("Calling to " + number + " from " + phoneNumber + ".");
+    }
+
     @Override
     public void sendSMS(String number, String message) {
+        setBatteryCapacity(getBatteryCapacity() - 15);
         log("Sending SMS to " + number + ": " + message);
     }
 
-    /**
-     * Реалізація методу для фотографування.
-     */
     @Override
-    public void takePhoto() {
-        log("Taking photo with " + cameraResolution + "MP camera.");
-    }
-
-    /**
-     * Отримати операційну систему телефону.
-     * @return операційна система
-     */
-    public String getOperatingSystem() {
-        log("Getting operating system.");
-        return operatingSystem;
-    }
-
-    /**
-     * Задати операційну систему телефону.
-     * @param operatingSystem операційна система
-     */
-    public void setOperatingSystem(String operatingSystem) {
-        log("Setting operating system to " + operatingSystem);
-        this.operatingSystem = operatingSystem;
-    }
-
-    /**
-     * Отримати роздільну здатність камери.
-     * @return роздільна здатність камери в мегапікселях
-     */
-    public int getCameraResolution() {
-        log("Getting camera resolution.");
-        return cameraResolution;
-    }
-
-    /**
-     * Задати роздільну здатність камери.
-     * @param cameraResolution роздільна здатність камери в мегапікселях
-     */
-    public void setCameraResolution(int cameraResolution) {
-        log("Setting camera resolution to " + cameraResolution + "MP");
-        this.cameraResolution = cameraResolution;
-    }
-
-    /**
-     * Перевизначений метод для завершення дзвінка.
-     */
-    @Override
-    public void endCall() {
-        super.endCall();
-        log("MobilePhone: Call ended and resources freed.");
+    public void receiveSMS(String message) {
+        setBatteryCapacity(getBatteryCapacity() - 5);
+        log("Received SMS: " + message);
     }
 }
