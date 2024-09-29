@@ -3,11 +3,11 @@ package KI.Kulyk.Lab5;
 import java.io.*;
 import java.lang.*;
 import java.util.Scanner;
+
 /**
- * Class <code>CalcWFio</code> implements method for tg(x)*ctg(2x) expression calculation and methods for writing and reading files
+ * Class <code>FunctionIO</code> implements method for sin(x) / ctg(8x) expression calculation and methods for writing and reading files
  * @version 1.0
  */
-
 public class FunctionIO
 {
     private double result;
