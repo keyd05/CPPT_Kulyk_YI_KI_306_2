@@ -4,36 +4,43 @@ import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.IOException;
 
+/**
+ * Class <code>Driver</code> Implements driver for Function class
+ * @version 1.0
+ */
 public class Driver {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
-        try
-        {
+        try {
             PrintWriter fout = new PrintWriter("MyFile.txt");
 
-            try
-            {
-                //Scanner in = new Scanner(System.in);
-                //System.out.print("Введіть X: ");
-                double x = Math.PI / 16; //in.nextDouble();
+            try {
+                Scanner in = new Scanner(System.in);
+                System.out.print("Enter X: ");
+                double x = in.nextDouble();
 
-                double result = (Math.sin(x) * Math.sin(8 * x)) / Math.cos(8 * x);
+                double result = Function.calculate(x);
 
-                fout.print("\nРезультат обчислення y = sin(x) / ctg(8x) при х = " + x + ": " + result);
-                System.out.print("\nРезультат обчислення y = sin(x) / ctg(8x) при х = " + x + ": " + result);
+                fout.println("Result of y = sin(x) / ctg(8x) when х = " + x + ": " + result);
+                System.out.println("Result of y = sin(x) / ctg(8x) when х = " + x + ": " + result);
 
             }
-            finally
-            {
+            // Блок перехоплює помилки обчислень виразу
+            catch (CalcException e) {
+                System.out.print(e.getMessage());
+            }
+            // Цей блок виконається за будь-яких обставин
+            finally {
                 fout.flush();
                 fout.close();
             }
         }
-        catch (CalcException e) {
-            System.out.print(e.getMessage());
-
-        }
         catch (IOException e) {
-            System.out.print("Помилка відкриття файлу");
+            // Блок перехоплює помилки роботи з файлом навіть якщо вони
+            // виникли у блоці finally
+            System.out.print("File opening error");
         }
     }
 }
